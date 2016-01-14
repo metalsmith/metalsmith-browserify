@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kopa-app/metalsmith-browserify.svg)](https://travis-ci.org/kopa-app/metalsmith-browserify)
+
 # Metalsmith - Browserify
 
 Metalsmith plugin to bundle JS with browserify
