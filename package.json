@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-browserify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Metalsmith plugin to bundle JS with browserify",
   "main": "index.js",
   "scripts": {
@@ -21,10 +21,8 @@
     "url": "https://github.com/kopa-app/metalsmith-browserify/issues"
   },
   "homepage": "https://github.com/kopa-app/metalsmith-browserify#readme",
-  "dev-dependencies": {
-    "browserify": "^13.0.0"
-  },
   "devDependencies": {
+    "browserify": "^13.0.0",
     "expect.js": "^0.3.1",
     "metalsmith": "^2.1.0",
     "mocha": "^2.3.4"
