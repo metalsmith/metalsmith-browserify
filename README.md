@@ -51,3 +51,28 @@ metalsmith(__dirname)
   .use(b) // use the plugin
   .build()
 ```
+
+It can also be used with `metalsmith.json` by adding the plugin like this:
+
+```json
+{
+  "plugins": {
+    "metalsmith-browserify": {
+      "dest": "javascripts/bundle.js",
+      "args": ["src/javascripts/index.js"]
+    }
+  }
+}
+```
+
+Or assume the defaults (dest: `bundle.js`, args: []):
+
+```json
+{
+  "plugins": {
+    "metalsmith-browserify": true
+  }
+}
+```
+
+
