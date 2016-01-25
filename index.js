@@ -2,9 +2,24 @@
 
 var browserify = require('browserify');
 
-module.exports = function (dest) {
-  var args = Array.from(arguments);
-  args.shift();
+var defaultDest = 'bundle.js';
+
+module.exports = function (options) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  var dest = options;
+
+  if (typeof options == 'object') {
+    if ('args' in options) {
+      args = options.args;
+    }
+    if ('dest' in options) {
+      dest = options.dest;
+    }
+  }
+
+  if (typeof dest !== 'string') {
+    dest = 'bundle.js';
+  }
 
   var b = browserify.apply(browserify, args);
 
