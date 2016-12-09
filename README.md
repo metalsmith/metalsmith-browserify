@@ -47,6 +47,9 @@ var b = browserify('js/bundle.js', [
 // do stuff with the bundle
 b.bundle.external(/*...*/);
 
+// do stuff with the resulting stream
+b.stream.pipe(exorcist('js/bundle.js.map'));
+
 metalsmith(__dirname)
   .use(b) // use the plugin
   .build()
@@ -74,5 +77,3 @@ Or assume the defaults (dest: `bundle.js`, args: []):
   }
 }
 ```
-
-

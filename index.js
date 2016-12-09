@@ -24,7 +24,7 @@ module.exports = function (options) {
   var b = browserify.apply(browserify, args);
 
   function bundler(files, metalsmith, callback) {
-    b.bundle(function (err, buf) {
+    bundler.stream = b.bundle(function (err, buf) {
       if (err) {
         return callback(err);
       }
