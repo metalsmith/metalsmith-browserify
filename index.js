@@ -23,6 +23,8 @@ module.exports = function (options) {
 
   if (options.watch) {
     options.plugins.push('watchify');
+    options.cache = options.cache || {};
+    options.packageCache = options.packageCache || {};
   }
 
   if (options.sourcemaps) {
