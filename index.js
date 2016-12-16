@@ -36,6 +36,13 @@ module.exports = function (options) {
   function bundler(files, metalsmith, callback) {
     var bundleDest = path.join(metalsmith.destination(), options.dest);
 
+    // we need to remove the source files from the list
+    // to prevent metalsmith copying the source file to the destination
+    options.entries.forEach(function (entry) {
+      var relPath = path.relative(metalsmith.source(), path.resolve(entry));
+      delete files[relPath];
+    });
+
     function create(first) {
       var s;
       if (options.sourcemaps) {
