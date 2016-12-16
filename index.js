@@ -22,7 +22,7 @@ module.exports = function (options) {
   }
 
   if (options.watch) {
-    options.plugins.push('watchify');
+    options.plugin.push('watchify');
     options.cache = options.cache || {};
     options.packageCache = options.packageCache || {};
   }
@@ -47,10 +47,12 @@ module.exports = function (options) {
       var s;
       if (options.sourcemaps) {
         s = b.bundle()
+        .on('error', console.error.bind(console))
         .pipe(exorcist(bundleDest + '.map'))
         .pipe(fs.createWriteStream(bundleDest), 'utf8');
       } else {
         s = b.bundle()
+        .on('error', console.error.bind(console))
         .pipe(fs.createWriteStream(bundleDest), 'utf8');
       }
 
