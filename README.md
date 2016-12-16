@@ -20,11 +20,12 @@ var metalsmith = require('metalsmith');
 var browserify = require('metalsmith-browserify');
 
 metalsmith(__dirname)
-  // first argument is the destination
-  // other arguments get passed to browserify
-  .use(browserify('js/bundle.js', [
-    './src/js/index.js'
-  ]))
+  .use(browserify({
+    dest: 'js/bundle.js',
+    entries: ['./src/js/index.js'],
+    sourcemaps: false,
+    watch: false
+  }))
   .build(function (err, files) {
     if (err) {
       throw err;
@@ -40,15 +41,13 @@ If you need to manipulate the created browserify bundle do:
 var metalsmith = require('metalsmith');
 var browserify = require('metalsmith-browserify');
 
-var b = browserify('js/bundle.js', [
-  './src/js/index.js'
-]);
+var b = browserify({
+  dest: 'js/bundle.js',
+  entires: ['./src/js/index.js']
+);
 
 // do stuff with the bundle
 b.bundle.external(/*...*/);
-
-// do stuff with the resulting stream
-b.stream.pipe(exorcist('js/bundle.js.map'));
 
 metalsmith(__dirname)
   .use(b) // use the plugin
@@ -62,7 +61,9 @@ It can also be used with `metalsmith.json` by adding the plugin like this:
   "plugins": {
     "metalsmith-browserify": {
       "dest": "javascripts/bundle.js",
-      "args": ["src/javascripts/index.js"]
+      "entries": ["src/javascripts/index.js"],
+      "sourcemaps": false,
+      "watch": false
     }
   }
 }

@@ -10,9 +10,10 @@ describe('metalsmith-browserify', function () {
   it('should bundle js files', function (done) {
     metalsmith(__dirname)
       .source('./fixtures/src')
-      .use(browserify('bundle-file.js'), [
-        './fixtures/js/index.js'
-      ])
+      .use(browserify({
+        dest: 'bundle-file.js',
+        entries: ['./fixtures/js/index.js']
+      }))
       .build(function (err) {
         if (err) {
           return done(err);
@@ -24,50 +25,40 @@ describe('metalsmith-browserify', function () {
       });
   });
 
-  it('should accept options', function (done) {
+  it('should have reasonable default options', function (done) {
     metalsmith(__dirname)
       .source('./fixtures/src')
       .use(browserify({
-        dest: 'bundle-options.js',
-        args: ['./fixtures/js/index.js']
+        entries: ['./fixtures/js/index.js']
       }))
       .build(function (err) {
         if (err) {
           return done(err);
         }
 
-        expect(fs.existsSync('./build/bundle-options.js')).to.be(true);
-        fs.unlinkSync('./build/bundle-options.js');
-        done();
-      });
-  });
-
-  it('should have reasonable default options', function (done) {
-    metalsmith(__dirname)
-      .source('./fixtures/src')
-      .use(browserify())
-      .build(function (err) {
-        if (err) {
-          return done(err);
-        }
-
         expect(fs.existsSync('./build/bundle.js')).to.be(true);
         fs.unlinkSync('./build/bundle.js');
         done();
       });
   });
 
-  it('should accept true option', function (done) {
+  it('should accept sourcemaps option', function (done) {
     metalsmith(__dirname)
       .source('./fixtures/src')
-      .use(browserify(true))
+      .use(browserify({
+        dest: 'bundle.js',
+        entries: ['./fixtures/js/index.js'],
+        sourcemaps: true
+      }))
       .build(function (err) {
         if (err) {
           return done(err);
         }
 
         expect(fs.existsSync('./build/bundle.js')).to.be(true);
+        expect(fs.existsSync('./build/bundle.js.map')).to.be(true);
         fs.unlinkSync('./build/bundle.js');
+        fs.unlinkSync('./build/bundle.js.map');
         done();
       });
   });
