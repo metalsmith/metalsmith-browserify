@@ -35,25 +35,6 @@ metalsmith(__dirname)
 
 See [browserify api](https://www.npmjs.com/package/browserify#api-example) for available options.
 
-If you need to manipulate the created browserify bundle do:
-
-```javascript
-var metalsmith = require('metalsmith');
-var browserify = require('metalsmith-browserify');
-
-var b = browserify({
-  dest: 'js/bundle.js',
-  entires: ['./src/js/index.js']
-);
-
-// do stuff with the bundle
-b.bundle.external(/*...*/);
-
-metalsmith(__dirname)
-  .use(b) // use the plugin
-  .build()
-```
-
 It can also be used with `metalsmith.json` by adding the plugin like this:
 
 ```json
