@@ -44,20 +44,23 @@ module.exports = function (options) {
     });
 
     function create(first) {
-      var s;
       if (options.sourcemaps) {
-        s = b.bundle()
-        .on('error', console.error.bind(console))
-        .pipe(exorcist(bundleDest + '.map'))
-        .pipe(fs.createWriteStream(bundleDest), 'utf8');
+        b.bundle(function(err, buffer) {
+            if (err) return callback(err);
+            files[options.dest] = {
+                contents: buffer
+            };
+            callback();
+        })
+        .pipe(exorcist(bundleDest + '.map'));
       } else {
-        s = b.bundle()
-        .on('error', console.error.bind(console))
-        .pipe(fs.createWriteStream(bundleDest), 'utf8');
-      }
-
-      if (first) {
-        s.on('finish', callback);
+        b.bundle(function(err, buffer) {
+            if (err) return callback(err);
+            files[options.dest] = {
+                contents: buffer
+            };
+            callback();
+        });
       }
     }
 
