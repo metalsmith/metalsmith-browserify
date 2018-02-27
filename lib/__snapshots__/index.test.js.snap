@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`metalsmith-browserify should return an error when entries is empty 1`] = `"Need at least a single entry point to process"`;
+
+exports[`metalsmith-browserify should return an error when entries is not an array 1`] = `"The entries option must be an array of strings"`;
+
+exports[`metalsmith-browserify should return an error when there are no options 1`] = `"The entries option is required"`;
+
+exports[`metalsmith-browserify should return an error when there is an error while bundling 1`] = `"Cannot find module '../lib/missing.js' from"`;
+
+exports[`metalsmith-browserify should return an error when there is no entries option 1`] = `"The entries option is required"`;
