@@ -8,7 +8,7 @@
 
 > A metalsmith plugin to bundle javascript with browserify
 
-This plugin allows you to bundle your javscript with browserify. Pass it the entry points it should bundle, and it will replace those files with the resulting bundle on build.
+This plugin allows you to bundle your javascript with browserify. Pass it the entry points it should bundle, and it will replace those files with the resulting bundle on build.
 
 For support questions please use [stack overflow][stackoverflow-url] or our [slack channel][slack-url]. For browserify specific questions try [their documentation](https://github.com/browserify/browserify).
 
