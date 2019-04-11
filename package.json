@@ -1,10 +1,10 @@
 {
   "name": "metalsmith-browserify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Metalsmith plugin to bundle JS with browserify",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kopa-app/metalsmith-browserify.git"
+    "url": "git+https://github.com/metalsmith/metalsmith-browserify.git"
   },
   "keywords": [
     "metalsmith",
@@ -14,9 +14,9 @@
   "author": "Ondrej Brinkel <info@kopa.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kopa-app/metalsmith-browserify/issues"
+    "url": "https://github.com/metalsmith/metalsmith-browserify/issues"
   },
-  "homepage": "https://github.com/kopa-app/metalsmith-browserify#readme",
+  "homepage": "https://github.com/metalsmith/metalsmith-browserify#readme",
   "main": "lib/index.js",
   "scripts": {
     "precommit": "lint-staged",
