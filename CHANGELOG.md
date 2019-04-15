@@ -1,3 +1,9 @@
+### 1.0.2 - April 15, 2019
+* bugfix: reading files from the metalsmith files object now, instead of from disk
+
+### 1.0.1 - April 14, 2019
+* not code related, move to metalsmith org.
+
 ### 1.0.0 - February 27, 2018
 * breaking change: new api (check readme)
 * breaking change: now updates the metalsmith files object so subsequent plugins have access to the build result
