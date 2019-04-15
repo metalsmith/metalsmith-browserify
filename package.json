@@ -32,8 +32,18 @@
   },
   "greenkeeper": {
     "ignore": [
+      "husky",
+      "coveralls",
+      "assert-dir-equal",
       "eslint",
-      "eslint-plugin-import"
+      "eslint-config-airbnb-base",
+      "eslint-config-prettier",
+      "eslint-plugin-import",
+      "lint-staged",
+      "jest",
+      "metalsmith",
+      "prettier",
+      "rimraf"
     ]
   },
   "dependencies": {
