@@ -23,7 +23,7 @@ $ npm install metalsmith-browserify
 You can pass options to `metalsmith-browserify` with the [Javascript API](https://github.com/segmentio/metalsmith#api) or [CLI](https://github.com/segmentio/metalsmith#cli). The options are:
 
 * [entries](#entries): required. The entry points that need to be browserified. Accepts an array of strings.
-* [browserifyOptions](#browserifyoptions): optional. These options will be passed on to browserify. See [this area of the browserify documentation](https://github.com/browserify/browserify#browserifyfiles--opts) for all available options. Note that it's possible to break stuff here, like overriding the entries, so use wisely.
+* [browserifyOptions](#browserifyoptions): optional. These options will be passed on to browserify. See [this area of the browserify documentation](https://github.com/browserify/browserify#browserifyfiles--opts) for all available options. Note that it's possible to break stuff here, like overriding the entries or basedir, so use wisely.
 
 ### `entries`
 
@@ -75,15 +75,15 @@ If you're encountering problems you can use [debug](https://www.npmjs.com/packag
 
 MIT
 
-[build-badge]: https://travis-ci.org/kopa-app/metalsmith-browserify.svg?branch=master
-[build-url]: https://travis-ci.org/kopa-app/metalsmith-browserify
+[build-badge]: https://travis-ci.org/metalsmith/metalsmith-browserify.svg?branch=master
+[build-url]: https://travis-ci.org/metalsmith/metalsmith-browserify
 [downloads-badge]: https://img.shields.io/npm/dm/metalsmith-browserify.svg
 [downloads-url]: https://www.npmjs.com/package/metalsmith-browserify
 [version-badge]: https://img.shields.io/npm/v/metalsmith-browserify.svg
 [version-url]: https://www.npmjs.com/package/metalsmith-browserify
-[greenkeeper-badge]: https://badges.greenkeeper.io/kopa-app/metalsmith-browserify.svg
+[greenkeeper-badge]: https://badges.greenkeeper.io/metalsmith/metalsmith-browserify.svg
 [greenkeeper-url]: https://greenkeeper.io/
-[coverage-badge]: https://coveralls.io/repos/github/kopa-app/metalsmith-browserify/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/kopa-app/metalsmith-browserify?branch=master
+[coverage-badge]: https://coveralls.io/repos/github/metalsmith/metalsmith-browserify/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/metalsmith/metalsmith-browserify?branch=master
 [slack-url]: http://metalsmith-slack.herokuapp.com/
 [stackoverflow-url]: http://stackoverflow.com/questions/tagged/metalsmith
