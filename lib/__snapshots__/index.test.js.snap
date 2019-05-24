@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`metalsmith-browserify should return an error when entries contains a file that does not exist 1`] = `"Cannot use 'doesNotExist.js' as an entry point - file does not exist."`;
+
 exports[`metalsmith-browserify should return an error when entries is empty 1`] = `"Need at least a single entry point to process"`;
 
 exports[`metalsmith-browserify should return an error when entries is not an array 1`] = `"The entries option must be an array of strings"`;
