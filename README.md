@@ -46,7 +46,7 @@ The entry points that should be browserified. So this `metalsmith.json`:
 
 Would browserify both `./src/index.js` and `./src/another.js` and output them as `./build/index.js` and `./build/another.js` respectively.
 
-Note that if the entry path is nested, the paths may differ across environments (for example, on Windows the paths may use `\` as a separator). To fix this, use the Javascript API and use `path.join` to generate the correct path for your system at runtime.
+Note that if the entry path is nested, the paths may differ across operating systems. Make sure you're using the correct directory separators, or use node's [path.join](https://nodejs.org/api/path.html#path_path_join_paths) to make sure the path will work anywhere.
 
 ### `browserifyOptions`
 
