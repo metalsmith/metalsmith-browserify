@@ -1,3 +1,10 @@
+### 1.1.0 - June 8, 2019
+* feature: added suppressNotFoundError to enable use with metalsmith-watch
+
+### 1.0.4
+### 1.0.3
+* superseded by 1.1.0
+
 ### 1.0.2 - April 15, 2019
 * bugfix: reading files from the metalsmith files object now, instead of from disk
 
