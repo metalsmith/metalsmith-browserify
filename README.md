@@ -24,6 +24,7 @@ You can pass options to `metalsmith-browserify` with the [Javascript API](https:
 
 * [entries](#entries): required. The entry points that need to be browserified. Accepts an array of strings.
 * [browserifyOptions](#browserifyoptions): optional. These options will be passed on to browserify. See [this area of the browserify documentation](https://github.com/browserify/browserify#browserifyfiles--opts) for all available options. Note that it's possible to break stuff here, like overriding the entries or basedir, so use wisely.
+* [suppressNotFoundError](#suppressnotfounderror): optional. By default `metalsmith-browserify` will exit with an error if a file can't be found. Enabling this option will suppress that error.
 
 ### `entries`
 
@@ -68,6 +69,25 @@ Use this to pass options to browserify. So this `metalsmith.json`:
 ```
 
 Would enable browserify's debug option and add a source map to the bundle.
+
+### `suppressNotFoundError`
+
+`metalsmith-browserify` exits with an error if it can’t find an [entry file](#entries). If you’re doing any kind of incremental builds via something like `metalsmith-watch`, this is problematic as you’re likely only rebuilding files that have changed. This flag allows you to suppress that error:
+
+```json
+{
+  "source": "src",
+  "destination": "build",
+  "plugins": {
+    "metalsmith-browserify": {
+      "entries": ["index.js"],
+      "suppressNotFoundError": true
+    }
+  }
+}
+```
+
+Note that when this option is turned on, if you're logging [debug](#errors-and-debugging) messages, you’ll still see a message denoting which files metalsmith-browserify cannot find.
 
 ## Errors and debugging
 
